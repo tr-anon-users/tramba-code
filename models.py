@@ -24,7 +24,7 @@ class LearnableSimilarity(nn.Module):
         return self.linear(similarity)
 
 
-class ShiftAwareAttention_AllLinks(nn.Module):
+class AdaptiveAttention(nn.Module):
     def __init__(self, d_model, max_shift=20, extra_shifts=None, daily_cycle=288, horizon_offset=1):
         super().__init__()
         self.d_model = d_model
@@ -95,7 +95,7 @@ class Tramba(nn.Module):
         self.agg_layer = nn.Linear(d_model, d_model)
         self.adaptive_emb = nn.Linear(d_model, d_model)
 
-        self.spatial_attn = ShiftAwareAttention_AllLinks(d_model, max_shift=20)
+        self.spatial_attn = AdaptiveAttention(d_model, max_shift=20)
         self.norm1 = nn.LayerNorm(d_model)
 
         self.temporal_mamba = Mamba(MambaConfig(d_model=d_model, n_layers=2))
