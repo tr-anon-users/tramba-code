@@ -4,6 +4,7 @@ from sklearn.preprocessing import MinMaxScaler
 import torch
 from torch.utils.data import DataLoader, TensorDataset
 
+
 def load_data(data_path, link_path, seq_len=36, pred_len=1, batch_size=32):
     df = pd.read_csv(data_path)
     link = pd.read_csv(link_path)
