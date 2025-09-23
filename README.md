@@ -1,5 +1,5 @@
 This repository contains the implementation of **Tramba**, a Mamba-based model with adaptive attention designed for urban traffic speed prediction. It jointly models long-range temporal dependencies and non-local spatial correlations to capture complex traffic dynamics in dense urban networks.
-
+ 
 ---
 
 ##  Model Architecture
@@ -88,3 +88,4 @@ After training, the script will generate:
 * Evaluation metrics in CSV format
 
 ---
+
